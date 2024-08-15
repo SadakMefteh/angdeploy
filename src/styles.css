@@ -1,0 +1,148 @@
+
+    
+    .navbar-nav .nav-link {
+        margin: 0 15px;
+        position: relative;
+    }
+    
+
+    .navbar-nav .nav-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #caccce;
+        transition: width 0.3s;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+    }
+    
+
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
+    }
+
+        
+
+        .bg-light {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            color: black;
+        }
+
+        .bg-dark {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .progress-bar {
+            color: black;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+        .input-group-text {
+            border: none;
+        }
+    
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #007bff;
+        }
+    
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+    
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .heading-underline {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 5px; /* Adds space for the underline */
+        }
+    
+        .heading-underline::after {
+            content: '';
+            display: block;
+            width: 100%; /* Set width to 100% to make the underline always visible */
+            height: 2px;
+            background: #141414;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+    
+        
+/* Initial state before the animation */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+/* Animation state when the section is in view */
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Custom styles for the sections */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.animate__animated {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* Keyframes for sliding the image into the right corner at the top */
+@keyframes slideInRightTop {
+    from {
+        transform: translate(50px, 50px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+/* Initial state of the image */
+#about img {
+    transform: translate(50px, 50px);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Applied class to trigger the animation */
+.img-animated {
+    animation: slideInRightTop 1s forwards ease;
+}
+

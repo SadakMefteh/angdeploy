@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End Developer Portfolio</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+  
+  <app-root></app-root>
+
+   
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/sadak.mefteh/?locale=fr_FR" target="_blank"><i class='bx bxl-facebook'></i></a>
+            <a href="www.linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/SadakMefteh/SadakMefteh" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="sadakmefteh@gmail.com"><i class='bx bx-envelope'></i></a>
+        </div>
+        <p>&copy; 2024 Front-End Developer Portfolio. All Rights Reserved
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            threshold: 0.2 // Trigger when 20% of the section is visible
+        };
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+    
+        sections.forEach(section => {
+            section.classList.add('section-hidden');
+            observer.observe(section);
+        });
+    });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('section');
+
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                        entry.target.classList.remove('hidden');
+                        observer.unobserve(entry.target); // Stop observing once the animation is applied
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Delay the animation slightly to allow the page to load smoothly
+            setTimeout(function() {
+                const aboutImage = document.getElementById('about-image');
+                aboutImage.classList.add('img-animated');
+            }, 500); // Delay for half a second
+        });
+    </script>
+    <script>document.addEventListener("DOMContentLoaded", function() {
+        const text = "HI I AM SADOK MEFTEH";
+        let index = 0;
+        const speed = 100; // Speed of typing (in milliseconds)
+    
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    
+        typeWriter(); // Start the typing effect when the page loads
+    });
+    </script>
+</body>
+
+</html>
+
